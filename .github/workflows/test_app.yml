@@ -1,0 +1,12 @@
+name: Test App
+on: [push, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download code from Repo
+        uses: actions/checkout@v4
+      - name: Install Depedencies
+        run: npm ci
+      - name: Run Test File
+        run: npm test
