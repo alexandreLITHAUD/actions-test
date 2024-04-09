@@ -9,7 +9,7 @@ jobs:
             -   name: Install Depedencies
                 run: npm ci
             -   name: Lint Code
-                run: npm lint
+                run: npm run lint
     test:
         runs-on: ubuntu-latest
         steps:
@@ -27,4 +27,4 @@ jobs:
             -   name: Install Depedencies
                 run: npm ci
             -   name: Build Code
-                run: npm build
+                run: npm run build
