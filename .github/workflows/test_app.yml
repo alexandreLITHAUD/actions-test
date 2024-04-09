@@ -11,6 +11,7 @@ jobs:
       - name: Run Test File
         run: npm test
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Download code from Repo
