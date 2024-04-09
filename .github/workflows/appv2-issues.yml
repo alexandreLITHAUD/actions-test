@@ -12,10 +12,10 @@ jobs:
                 github-token: ${{ secrets.GITHUB_TOKEN }}
                 script: |
                   const issueComment = `
-                    Thank you for opening this issue. 
+                    👋 Thanks for reporting!
                     We will look into it soon.
                   `;
-                  github.issues.createComment({
+                  github.rest.issues.createComment({
                     issue_number: context.issue.number,
                     owner: context.repo.owner,
                     repo: context.repo.repo,
