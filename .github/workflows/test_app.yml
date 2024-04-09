@@ -10,3 +10,14 @@ jobs:
         run: npm ci
       - name: Run Test File
         run: npm test
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download code from Repo
+        uses: actions/checkout@v4
+      - name: Install Depedencies
+        run: npm ci
+      - name: Build Project
+        run: npm run build
+      - name: Deploy
+        run: echo "J\'ai rien sur quoi deployer lol"
