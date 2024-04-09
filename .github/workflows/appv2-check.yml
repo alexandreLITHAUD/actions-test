@@ -1,0 +1,30 @@
+name: App check
+on: [push, workflow_dispatch]
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Download code from repo
+                uses: actions/checkout@v4
+            -   name: Install Depedencies
+                run: npm ci
+            -   name: Lint Code
+                run: npm lint
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Download code from repo
+                uses: actions/checkout@v4
+            -   name: Install Depedencies
+                run: npm ci
+            -   name: Test Code
+                run: npm test
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Download code from repo
+                uses: actions/checkout@v4
+            -   name: Install Depedencies
+                run: npm ci
+            -   name: Build Code
+                run: npm build
